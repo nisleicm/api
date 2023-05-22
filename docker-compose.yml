@@ -2,8 +2,8 @@ version: "3.1"
 services:
 
     api_mariadb:
-      image: mysql:latest
-      container_name: api_mysql
+      image: mariadb:10.11
+      container_name: api_mariadb
       restart: unless-stopped
       tty: true
       volumes:
@@ -12,7 +12,7 @@ services:
         - MYSQL_ROOT_PASSWORD=Ncm@647534
         - MYSQL_DATABASE=base
         - MYSQL_USER=root
-        - MYSQL_PASSWORD=Ncm@647534
+        - MYSQL_PASSWORD=pass
       ports:
         - "8031:3306"
       networks:
@@ -30,7 +30,7 @@ services:
       ports:
         - "10080:80"
       links:
-        - api_mysql
+        - api_mariadb
       networks:
         - api
 
