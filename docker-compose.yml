@@ -2,8 +2,8 @@ version: "3.1"
 services:
 
     api_mariadb:
-      image: mariadb:10.4
-      container_name: api_mariadb
+      image: mysql:8.0.31
+      container_name: api_mysql8
       restart: unless-stopped
       tty: true
       volumes:
