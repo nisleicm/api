@@ -2,8 +2,8 @@ version: "3.1"
 services:
 
     api_mariadb:
-      image: mysql:8.0.31
-      container_name: api_mysql8031
+      image: mysql:8
+      container_name: api_mysql
       restart: unless-stopped
       tty: true
       volumes:
@@ -30,7 +30,7 @@ services:
       ports:
         - "10080:80"
       links:
-        - api_mysql8031
+        - api_mysql
       networks:
         - api
 
