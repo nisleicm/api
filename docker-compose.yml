@@ -3,7 +3,7 @@ services:
 
     api_mariadb:
       image: mysql:8.0.31
-      container_name: api_mysql8
+      container_name: api_mysql8031
       restart: unless-stopped
       tty: true
       volumes:
@@ -14,7 +14,7 @@ services:
         - MYSQL_USER=root
         - MYSQL_PASSWORD=Ncm@647534
       ports:
-        - "8083:3306"
+        - "8031:3306"
       networks:
         - api
 
@@ -30,7 +30,7 @@ services:
       ports:
         - "10080:80"
       links:
-        - api_mariadb
+        - api_mysql8031
       networks:
         - api
 
